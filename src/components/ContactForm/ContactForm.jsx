@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/selectors';
-import { addContact } from 'redux/operations';
+import { addContact } from '../../redux/operations';
 import { setFilter } from '../../redux/slices';
 
 export const ContactForm = () => {
@@ -12,9 +12,7 @@ export const ContactForm = () => {
 
     const form = evt.currentTarget;
     const { name, number } = form.elements;
-    const isContactExist = contacts.find(
-      contact => contact.name === name.value
-    );
+    const isContactExist = contacts.find(contact => contact.name === name.value);
 
     if (isContactExist) {
       dispatch(setFilter(''));

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, setFilter } from '../../redux/slices';
 import { getContacts } from '../../redux/selectors';
+import { addContact } from 'redux/operations';
+import { setFilter } from '../../redux/slices';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export const ContactForm = () => {
       dispatch(setFilter(''));
       alert(`${name.value} is already in contacts`);
     } else {
-      dispatch(addContact(name.value, number.value));
+      dispatch(addContact({ name: name.value, number: number.value }));
       dispatch(setFilter(''));
     }
 

@@ -1,9 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from '../../redux/slices';
 import { getContacts, getFilter } from '../../redux/selectors';
-
+import { deleteContact } from '../../redux/operations';
 import { ContactListItem } from '../ContactListItem';
-
 import PropTypes from 'prop-types';
 
 export const ContactList = () => {
